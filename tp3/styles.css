@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+	max-width: 1200px;
+	margin: auto;
+	padding: 16px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 16px;
+	padding: 8px;
+	background-color: #7451eb;
+	text-align: center;
+	color: white;
+}
+header img {
+	height: 60px;
+	margin-left: 1rem;
+}
+header h1 {
+	flex-grow: 1;
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+}
+
+.filtres {
+	border-radius: 4px;
+	box-shadow: 0px 0px 4px gray;
+	margin: 8px;
+	padding: 8px;
+	min-width: 300px;
+	min-height: 400px;
+}
+.filtres h3 {
+	text-align: center;
+}
+
+.fiches {
+	flex: 1;
+	margin: 8px;
+}
+.fiches img {
+	max-width: 200px;
+}
+.fiches p {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+/* New styles: product grid, cards, controls and responsive behavior */
+/* Layout */
+#app main {
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	gap: 16px;
+}
+
+/* Search and header inside fiches */
+section input[type="search"]{
+	width: 100%;
+	padding: 10px 12px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+	margin-bottom: 12px;
+	font-size: 14px;
+}
+
+/* Product list grid */
+section ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 16px;
+}
+
+section li {
+	background: linear-gradient(180deg, #ffffff, #fbfbff);
+	border-radius: 10px;
+	padding: 12px;
+	box-shadow: 0 6px 18px rgba(116,81,235,0.08);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	transition: transform .12s ease, box-shadow .12s ease;
+}
+
+section li:hover{
+	transform: translateY(-6px);
+	box-shadow: 0 10px 28px rgba(116,81,235,0.12);
+}
+
+section li img{
+	width: 140px;
+	height: 100px;
+	object-fit: contain;
+	margin-bottom: 8px;
+}
+
+section li h3{
+	margin: 6px 0 4px;
+	font-size: 16px;
+	color: #333;
+}
+
+section li p{
+	margin: 2px 0;
+	color: #555;
+	font-size: 13px;
+}
+
+/* Buttons */
+button{
+	background: #7451eb;
+	color: white;
+	border: none;
+	padding: 8px 12px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 600;
+	margin-top: 8px;
+}
+
+button[disabled]{
+	background: #ccc;
+	cursor: not-allowed;
+	opacity: 0.8;
+}
+
+select{
+	width: 100%;
+	padding: 8px 10px;
+	border-radius: 6px;
+	border: 1px solid #ddd;
+	font-size: 14px;
+}
+
+/* Filters panel tweaks */
+.filtres{
+	position: sticky;
+	top: 16px;
+	align-self: start;
+}
+
+/* Small cart indicator (top-right) */
+.cart-indicator{
+	position: absolute;
+	right: 24px;
+	top: 18px;
+	background: #ff6b6b;
+	color: white;
+	padding: 6px 10px;
+	border-radius: 18px;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+/* Responsive behavior for small screens */
+@media (max-width: 800px){
+	body{padding: 12px}
+	#app main{
+		grid-template-columns: 1fr;
+	}
+	.filtres{
+		min-width: auto;
+		width: 100%;
+		display: flex;
+		gap: 12px;
+		padding: 12px;
+		flex-direction: row;
+		align-items: center;
+		overflow-x: auto;
+	}
+	.filtres fieldset{border: none;padding:0;margin:0}
+}

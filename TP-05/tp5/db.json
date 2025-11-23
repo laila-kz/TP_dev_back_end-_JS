@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Hello Vue",
+      "body": "This is an example blog post used to test the API.",
+      "tags": [
+        "vue",
+        "javascript"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "My Second Article",
+      "body": "This is another test post so you can see multiple items.",
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": 1763426276793,
+      "title": "bro",
+      "body": "shic wc wc",
+      "tags": [
+        "#jidj",
+        "#htid"
+      ],
+      "createdAt": "2025-11-18T00:37:56.792Z"
+    }
+  ]
+}

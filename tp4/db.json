@@ -1,0 +1,30 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Frontend Developer",
+      "company": "Acme Corp",
+      "description": "Build user interfaces with Vue.js",
+      "salary": 45000,
+      "location": "Casablanca",
+      "type": "full-time",
+      "experienceYears": 2,
+      "skills": "vue,javascript,html,css",
+      "category": "Development",
+      "createdDate": "2025-12-01"
+    },
+    {
+      "id": 2,
+      "title": "Backend Developer",
+      "company": "Beta Labs",
+      "description": "Work on APIs and databases",
+      "salary": 52000,
+      "location": "Rabat",
+      "type": "remote",
+      "experienceYears": 3,
+      "skills": "nodejs,express,mongodb",
+      "category": "Development",
+      "createdDate": "2025-11-20"
+    }
+  ]
+}

@@ -1,38 +1,83 @@
-# tp06
 
-This template should help get you started developing with Vue 3 in Vite.
+# TP06 — Event List Demo
 
-## Recommended IDE Setup
+A small event-listing application built with Vue 3 and Firebase. It demonstrates authentication (signup/login), listing events, and a simple event creation flow. Intended as a learning project and starter template for deploying a small Vue + Firebase app.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Features
 
-## Recommended Browser Setup
+- User signup and login
+- List events with basic details (title, date, location)
+- Create and view events (basic CRUD scaffolding)
+- Firebase Authentication and Firestore integration
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Tech stack
 
-## Customize configuration
+- Frontend: Vue 3 + Vite
+- Backend: Firebase (Authentication, Firestore)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Quick start
 
-## Project Setup
+1. Install dependencies
 
-```sh
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+2. Firebase setup
 
-```sh
+- Create a Firebase project at https://console.firebase.google.com
+- Enable **Authentication** (Email/Password) and **Firestore**.
+- Copy your Firebase SDK config into `src/firebase/config.js` following the existing file structure.
+
+3. Run locally
+
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+4. Build for production
 
-```sh
+```bash
 npm run build
 ```
+
+## Project structure
+
+- `src/` — application source
+	- `components/` — reusable UI components (EventList, Login, SignUp)
+	- `firebase/` — Firebase config and helper functions
+	- `App.vue`, `main.js` — app entry and bootstrapping
+	- `assets/` — styles and static assets
+
+- `public/` — static public files
+- `index.html` — Vite entry
+
+## Firestore rules & indexes
+
+- Before deploying, set Firestore rules appropriate to your app (e.g., allow reads to public data, protect writes to authenticated users).
+- Add necessary Firestore indexes if you use compound queries; use `firebase emulators:start` or the console to create indexes.
+
+## Deployment (optional)
+
+To deploy to Firebase Hosting:
+
+```bash
+firebase init hosting
+firebase deploy --only hosting
+```
+
+Make sure your `firebase.json` and `public` build output are configured to serve the Vite build (typically `dist/`).
+
+## Contributing
+
+1. Fork the repository
+2. Create a branch (`git checkout -b feat/your-feature`)
+3. Commit and open a Pull Request
+
+## License
+
+This repository is for educational purposes. Add an open-source license if you plan to publish.
+
+## Contact
+
+Open an issue if you need help or want to suggest improvements.

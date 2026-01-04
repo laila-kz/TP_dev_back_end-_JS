@@ -1,38 +1,73 @@
-# forum-communautaire
 
-This template should help get you started developing with Vue 3 in Vite.
+# Forum Communautaire
 
-## Recommended IDE Setup
+Small community forum built with Vue and Firebase (starter project for learning). Provides discussion threads, categories, authentication, and simple CRUD for posts and responses.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Features
 
-## Recommended Browser Setup
+- User registration and login
+- Create, edit, delete discussions
+- Category listing and discussion browsing
+- Post responses and basic moderation
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Tech stack
 
-## Customize configuration
+- Frontend: Vue 3, Vite
+- Backend: Firebase (Firestore + Auth)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Quick start
 
-## Project Setup
+1. Install dependencies
 
-```sh
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+2. Configure Firebase
 
-```sh
+- Create a Firebase project and enable Firestore and Authentication.
+- Copy your Firebase config into `src/firebase/config.js` (follow the existing file format).
+
+3. Run locally
+
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+4. Build for production
 
-```sh
+```bash
 npm run build
 ```
+
+## Project structure
+
+- `src/` — Vue app source
+	- `components/` — UI components (cards, navbar, responses)
+	- `views/` — Route-level views (Home, Discussion, New Discussion, Profile)
+	- `firebase/` — Firebase config and helpers
+	- `router/` — Vue Router setup
+
+## Environment & Deployment notes
+
+- Ensure Firestore rules and indexes are configured before deploying.
+- To deploy to Firebase Hosting (optional):
+
+```bash
+firebase init hosting
+firebase deploy --only hosting
+```
+
+## Contributing
+
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feat/your-feature`)
+3. Commit your changes and open a PR
+
+## License
+
+This project is for learning and demonstration purposes. Add a license if you intend to open-source it.
+
+## Contact
+
+If you have questions, open an issue or contact the maintainer.

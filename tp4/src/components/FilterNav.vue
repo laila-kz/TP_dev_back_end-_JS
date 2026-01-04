@@ -9,9 +9,11 @@
 
     <select v-model="type" @change="emitFilter">
       <option value="">All types</option>
-      <option value="Full-time">Full-time</option>
-      <option value="Part-time">Part-time</option>
-      <option value="Contract">Contract</option>
+      <option value="full-time">Full-time</option>
+      <option value="part-time">Part-time</option>
+      <option value="remote">Remote</option>
+      <option value="on-site">On-site</option>
+      <option value="internship">Internship</option>
     </select>
   </div>
 </template>

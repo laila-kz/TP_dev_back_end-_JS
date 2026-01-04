@@ -3,10 +3,12 @@
 <div>
 <FilterNav :jobs="jobs" @filter="applyFilter" />
     <div v-if="loading">Loading jobs...</div>
-    <div v-else>
-        <div v-if="filteredLength === 0"> No jobs found.</div>
-        <Job v-for="job in filteredJobs" :key="job.id" :job="job" @delete-job="Delete" />
-    </div>
+                <div v-else>
+                <div v-if="filteredLength === 0"> No jobs found.</div>
+                <div class="job-list">
+                    <Job v-for="job in filteredJobs" :key="job.id" :job="job" @delete-job="Delete" />
+                </div>
+        </div>
     </div>
 
 

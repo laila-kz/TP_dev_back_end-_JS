@@ -1,13 +1,20 @@
 <template>
-    <div v-if="loading"> Loading Posts .........</div>
-    <div v-else-if="error"> {{ error }}</div>
-    <div v-else>
-        <div v-if="post">
-                <h3> {{ post.title }}</h3>
-                <p>{{ post.body }}</p>
-                <p>{{ post.tag }}</p>
+    <div>
+        <div v-if="loading" class="loading">Loading post...</div>
+        <div v-else-if="error" class="error">{{ error }}</div>
+        <div v-else class="post-detail">
+            <div v-if="post">
+                <h1>{{ post.title }}</h1>
+                <div class="post-meta">By {{ post.author || 'Unknown' }} — {{ post.date || '' }}</div>
+                <div class="post-content">{{ post.body }}</div>
+                <div class="post-tags">
+                    <div class="tags-list">
+                        <span v-for="t in (post.tags || [])" :key="t" class="tag">{{ t }}</span>
+                    </div>
+                </div>
+            </div>
+            <div v-else>Post not found</div>
         </div>
-        <div v-else> Post not existent / not found</diV>
     </div>
 </template>
 

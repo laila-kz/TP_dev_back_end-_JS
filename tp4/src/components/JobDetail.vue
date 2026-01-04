@@ -13,8 +13,8 @@
             <p><strong>Description:</strong> {{ job.description }}</p>
             <p><em>Posted:</em> {{ job.createdDate }}</p>
 
-            <button @click="goToEdit">Edit Job</button>
-            <button @click="deleteJob">Delete Job</button>
+            <button class="btn btn-primary" @click="goToEdit">Edit Job</button>
+            <button class="btn btn-danger" @click="deleteJob">Delete Job</button>
         </div>
         <div v-else>
             <p>Loading job details...</p>

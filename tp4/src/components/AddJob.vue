@@ -1,7 +1,7 @@
 <template>
 <h2>Add a New Job</h2>
 
-<form @submit.prevent="submitJob">
+<form class="form-grid" @submit.prevent="submitJob">
     <div>
         <label for="title">Job Title:</label>
         <input type="text" id="title" name="title" v-model="formData.title" required />
@@ -48,9 +48,9 @@
         <label for="createdDate">Creation Date:</label>
         <input type="date" id="createdDate" name="createdDate" v-model="formData.createdDate" required />
     </div>
-    <div class="actions">
-    <button type="submit">Add Job</button> 
-    <router-link to="/">Cancel</router-link>
+    <div class="actions full">
+    <button class="btn btn-primary" type="submit">Add Job</button> 
+    <router-link class="btn btn-secondary" to="/">Cancel</router-link>
 </div>
 </form>
 </template>

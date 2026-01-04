@@ -1,7 +1,7 @@
 <template>
 <h2>Edit a Job</h2>
 <div v-if="job.id">
-    <form @submit.prevent="submitEdit">
+    <form class="form-grid" @submit.prevent="submitEdit">
         <div>
             <label for="title">Job Title:</label>
             <input type="text" id="title" name="title" v-model="job.title" required />
@@ -48,8 +48,8 @@
             <label for="createdDate">Creation Date:</label>
             <input type="date" id="createdDate" name="createdDate" v-model="job.createdDate" />
         </div>
-        <button type="submit">Update Job</button> 
-        <router-link to="/home">Cancel</router-link>
+        <button class="btn btn-primary" type="submit">Update Job</button> 
+        <router-link class="btn btn-secondary" to="/">Cancel</router-link>
     </form>
 </div>
 <div v-else>

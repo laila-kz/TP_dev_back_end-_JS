@@ -1,15 +1,16 @@
 <template>
-    <div v-if="loading"> Loading Posts ......</div>
-    <div v-else-if="error">{{ error }}</div>
-    <div v-else>
-        <ul >
-            <li v-for="post in posts" :key="post.id">
-                <h3>{{post.title}}</h3>
-        <p>{{post.body.substring(0,50)}} .........</p>
-        <router-link :to="`/post/${post.id}`"> Read more</router-link>
-            </li>
-        </ul>
-        
+    <div>
+        <div v-if="loading" class="loading">Loading posts...</div>
+        <div v-else-if="error" class="error">{{ error }}</div>
+        <div v-else class="post-list">
+            <ul>
+                <li v-for="post in posts" :key="post.id">
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.body.substring(0, 150) }}...</p>
+                    <router-link :to="`/post/${post.id}`">Read more</router-link>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 <script setup>
@@ -35,10 +36,10 @@
     import { defineProps } from 'vue'
 
     const props = defineProps({
-    posts: {
-        type: Array,
-        default: () => [] // EDIT: accept posts prop from parent
-    },
+        posts: {
+            type: Array,
+            default: () => [] // accept posts prop from parent
+        },
     })
 
 
